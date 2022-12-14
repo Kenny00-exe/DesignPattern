@@ -20,6 +20,10 @@ public class RealDamageSheet implements DamageSheet {
             }
             if (GameContainer.getInstance().get(i).isVisited()) {
                 System.out.println("已攻略");
+                Game game = GameContainer.getInstance().get(i);
+                for (int j = 1; j <= 4; ++j) {
+                    System.out.println("玩家编号：" + j + "  姓名：" + game.getPlayerLists().get(j - 1).getCharacterName() + "  输出：" + game.getDamage()[j - 1]);
+                }
             }
             else
                 System.out.println("未攻略");
